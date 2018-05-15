@@ -37,14 +37,6 @@ public class BulletsFactoryThread extends Thread{
             bullet1.x = plane.x;
             bullet1.y = plane.y+50;
             bullet1.isMybullet = false;
-//            for(int i =0;i<bulletArrayList.size();i++){
-//                if(bulletArrayList.get(i)==null){
-//                    bulletArrayList.add(i,bullet1);
-//                }
-//                else{
-//                    bulletArrayList.add(bullet1);
-//                }
-//            }
             bulletArrayList.add(bullet1);
             try {
                 Thread.sleep(time);

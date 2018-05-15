@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Administrator on 2018/4/10.
@@ -39,6 +40,7 @@ public class Bullet {
     public void move(){
             vy = 5;
             y += vy;
+
             if(this.y >= 1800){
                 bulletArrayList.remove(this);
             }
