@@ -20,7 +20,7 @@ public class Planes {
     //飞机类
     //属性：位置，速度，生命值，飞机种类等
     //方法：运动，发射子弹，画出飞机的方法等
-    public int x,y,vy,r=50;
+    public int x,y,vy,r=50,num;
     private int hp;
     private int kind;
     private ImageView iv;
@@ -73,6 +73,8 @@ public class Planes {
         if(y>=iv.getHeight()){
             isOverBound = true;
             planesArrayList.remove(this);
+            num++;
+            bulletArrayList = null;
         }
     }
 
