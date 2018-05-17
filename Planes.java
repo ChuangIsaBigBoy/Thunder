@@ -73,8 +73,8 @@ public class Planes {
         if(y>=iv.getHeight()){
             isOverBound = true;
             planesArrayList.remove(this);
-            num++;
-            bulletArrayList = null;
+//            num++;
+//            bulletArrayList = null;
         }
     }
 
@@ -88,6 +88,11 @@ public class Planes {
             bullet = bulletArrayList.get(i);
             bullet.move();
             bullet.drawbullet(canvas);
+            if(y-50>=iv.getHeight()){
+                num++;
+                bulletArrayList = null;
+                break;
+            }
         }
     }
 }
