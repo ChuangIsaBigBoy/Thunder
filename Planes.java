@@ -34,32 +34,35 @@ public class Planes {
     private ArrayList<Bullet> bulletArrayList;
     private Bullet bullet;
     private ArrayList<Planes> planesArrayList;
+    private ArrayList<Bitmap> bitmapArrayList;
 
-    public Planes(MyPlaneActivity mp,ImageView iv,ArrayList<Planes> planesArrayList){
+
+    public Planes(MyPlaneActivity mp,ImageView iv,ArrayList<Planes> planesArrayList,ArrayList<Bitmap> bitmapArrayList){
         this.mp = mp;
         this.iv = iv;
         this.planesArrayList = planesArrayList;
+        this.bitmapArrayList = bitmapArrayList;
         bulletArrayList = new ArrayList<>();
         random = new Random();
-        y = 0;
+        y = 0-(int)iv.getY();
         x = 20 * random.nextInt(40);
         vy = 2;
         kind = random.nextInt(5);
         switch(kind){
             case 0:
-                planebmp = BitmapFactory.decodeResource(mp.getResources(),R.mipmap.plane1);
+                planebmp = bitmapArrayList.get(0);
                 break;
             case 1:
-                planebmp = BitmapFactory.decodeResource(mp.getResources(),R.mipmap.plane2);
+                planebmp = bitmapArrayList.get(1);
                 break;
             case 2:
-                planebmp = BitmapFactory.decodeResource(mp.getResources(),R.mipmap.plane3);
+                planebmp = bitmapArrayList.get(2);
                 break;
             case 3:
-                planebmp = BitmapFactory.decodeResource(mp.getResources(),R.mipmap.plane4);
+                planebmp = bitmapArrayList.get(3);
                 break;
             case 4:
-                planebmp = BitmapFactory.decodeResource(mp.getResources(),R.mipmap.plane5);
+                planebmp = bitmapArrayList.get(4);
                 break;
         }
         BulletsFactoryThread bft1 = new BulletsFactoryThread(mp,canvas,bulletArrayList);

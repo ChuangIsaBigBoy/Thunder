@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 
 public class MyBullet {
-    public  int x,y,vy,w=10,h=16;
+    public  int x,y,vy,w=10,h=16,count;
     private MyPlaneActivity mp;
     private Bitmap myBullet;
     private Canvas canvas;
@@ -38,6 +38,13 @@ public class MyBullet {
         y -= vy;
         if(y<=0){
             myBulletArrayList.remove(this);
+//            count = myBulletArrayList.indexOf(this);
+//            for(count = 0;count<myBulletArrayList.size();count++){
+//                if(myBulletArrayList.get(count)!= null){
+//                    myBulletArrayList = myBulletArrayList(count,count+50);
+//                    break;
+//                }
+//            }
         }
     }
 

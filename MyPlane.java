@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class MyPlane {
     float x,y;
-    int ix,iy;
+    int ix,iy,count=0;
     boolean isMyplane = true;
     public ArrayList<MyBullet> myBulletArrayList;
     public ArrayList<Planes> planesArrayList;
@@ -37,6 +37,13 @@ public class MyPlane {
                     MyBullet myBullet = new MyBullet(mp,planesArrayList,myBulletArrayList);
                     myBullet.x = (int)MyPlane.this.x;
                     myBullet.y = (int)MyPlane.this.y-50;
+//                    if(count <= myBulletArrayList.size()){
+//                        myBulletArrayList.add(count,myBullet);
+//                        count++;
+//                    }
+//                    else{
+//                        count =0;
+//                    }
                     myBulletArrayList.add(myBullet);
                     try {
                         Thread.sleep(500);

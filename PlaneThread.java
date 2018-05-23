@@ -27,6 +27,7 @@ public class PlaneThread extends Thread{
     private Rect bgsrc;
     private Rect bgdst;
     private HitCheckThread hct;
+    int num;
 
 
     public PlaneThread(MyPlaneActivity mp,Canvas canvas, Bitmap bitmap,Paint paint, HandleMessage hm, ImageView iv, ArrayList<Planes> planesArrayList,ImageViewListener ivl,MyPlane myPlane){
@@ -47,6 +48,7 @@ public class PlaneThread extends Thread{
     public void run(){
 
         while(true){
+//            IVroll();
             bitmap = Bitmap.createBitmap(iv.getWidth(),iv.getHeight(), Bitmap.Config.ARGB_8888);
             canvas = new Canvas(bitmap);
             paint = new Paint();
@@ -65,10 +67,23 @@ public class PlaneThread extends Thread{
             msg.obj =bitmap;
             hm.sendMessage(msg);
             try {
-                Thread.sleep(10);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+//            if(bitmap != null && !bitmap.isRecycled()){
+//                bitmap.recycle();
+//                bitmap = null;
+//            }
         }
+
+    }
+    public void IVroll(){
+        if(y>=iv.getHeight()){
+            y = 0;
+        }else{
+            y+=2;
+        }
+        iv.setY(y);
     }
 }
